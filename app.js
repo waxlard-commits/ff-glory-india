@@ -1,10 +1,4 @@
-import { db } from "./firebase.js";
-
-import {
-  doc,
-  setDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
   createUserWithEmailAndPassword,
@@ -13,64 +7,149 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// Signup
+import {
+  doc,
+  setDoc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// =======================
+// SIGNUP START
+// =======================
+
 window.signup = async function () {
 
   const email = document.getElementById("signupEmail").value.trim();
   const password = document.getElementById("signupPassword").value.trim();
 
-  if (!email || !password) {
+  if (email === "" || password === "") {
     alert("Please enter email and password.");
     return;
   }
+    try {
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-const user = userCredential.user;
+    const user = userCredential.user;
 
-await setDoc(doc(db, "users", user.uid), {
-  email: email,
-  server: "",
-  guild: "",
-  basicCard: 0,
-  premiumCard: 0,
-  orders: 0,
-  createdAt: new Date().toISOString()
-});
+    await setDoc(doc(db, "users", user.uid), {
+      uid: user.uid,
+      email: user.email,
+      server: "",
+      guild: "",
+      basicCard: 0,
+      premiumCard: 0,
+      orders: 0,
+      createdAt: new Date().toISOString()
+    });
 
-alert("Account created successfully!");
+    alert("✅ Account created successfully!");
+
+    window.location.href = "dashboard.html";
+
   } catch (error) {
-    alert(error.message);
+
+    console.error(error);
+
+    switch (error.code) {
+
+      case "auth/email-already-in-use":
+        alert("❌ This email is already registered.");
+        break;
+
+      case "auth/invalid-email":
+        alert("❌ Invalid email address.");
+        break;
+
+      case "auth/weak-password":
+        alert("❌ Password must be at least 6 characters.");
+        break;
+
+      default:
+        alert(error.code + "\n" + error.message);
+
+    }
+
   }
 
 };
 
-// Login
+// =======================
+// LOGIN START
+// =======================
+
 window.login = async function () {
 
   const email = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value.trim();
 
-  if (!email || !password) {
+  if (email === "" || password === "") {
     alert("Please enter email and password.");
     return;
-  }
+  }  try {
 
-  try {
     await signInWithEmailAndPassword(auth, email, password);
 
     localStorage.setItem("userEmail", email);
 
+    const user = auth.currentUser;
+
+    if (user) {
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+
+      if (!userDoc.exists()) {
+        await setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          email: user.email,
+          server: "",
+          guild: "",
+          basicCard: 0,
+          premiumCard: 0,
+          orders: 0,
+          createdAt: new Date().toISOString()
+        });
+      }
+    }
+
+    alert("✅ Login Successful!");
+
     window.location.href = "dashboard.html";
 
   } catch (error) {
-    alert(error.message);
+
+    console.error(error);
+
+    switch (error.code) {
+
+      case "auth/invalid-credential":
+        alert("❌ Wrong email or password.");
+        break;
+
+      case "auth/user-not-found":
+        alert("❌ Account not found.");
+        break;
+
+      case "auth/wrong-password":
+        alert("❌ Wrong password.");
+        break;
+
+      default:
+        alert(error.code + "\n" + error.message);
+
+    }
+
   }
 
 };
 
-// Logout
+// =======================
+// LOGOUT
+// =======================
+
 window.logout = async function () {
 
   await signOut(auth);
@@ -81,7 +160,10 @@ window.logout = async function () {
 
 };
 
-// Check Login Status
+// =======================
+// AUTH CHECK
+// =======================
+
 onAuthStateChanged(auth, (user) => {
 
   if (user) {
