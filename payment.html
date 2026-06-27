@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment - FF Glory India</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="card">
+
+<h1>💳 Payment</h1>
+
+<p class="center">
+Scan the QR and complete your payment.
+</p>
+
+<img src="qr.jpg" alt="Payment QR" style="width:250px;border-radius:10px;">
+
+</div>
+
+<div class="card">
+
+<h2>📸 Upload Payment Screenshot</h2>
+
+<input
+type="file"
+id="paymentImage"
+accept="image/*">
+
+<button onclick="submitPayment()">
+Submit Payment
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Payment Status</h2>
+
+<div id="paymentStatus">
+
+<p>No payment submitted.</p>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<button onclick="window.location.href='dashboard.html'">
+🏠<br>Home
+</button>
+
+<button onclick="window.location.href='profile.html'">
+👤<br>Profile
+</button>
+
+<button onclick="window.location.href='payment.html'">
+💳<br>Payment
+</button>
+
+<button onclick="window.location.href='history.html'">
+📜<br>History
+</button>
+
+<button onclick="logout()">
+🚪<br>Logout
+</button>
+
+</div>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+window.submitPayment = function(){
+
+const file = document.getElementById("paymentImage").files[0];
+
+if(!file){
+alert("Please select a payment screenshot.");
+return;
+}
+
+document.getElementById("paymentStatus").innerHTML = `
+<div class="box">
+✅ Payment Submitted<br>
+⏳ Waiting for Admin Approval
+</div>
+`;
+
+alert("Payment submitted successfully.");
+
+};
+
+window.logout = async function(){
+
+await signOut(auth);
+
+localStorage.clear();
+
+window.location.href = "index.html";
+
+};
+
+</script>
+
+</body>
+</html>
