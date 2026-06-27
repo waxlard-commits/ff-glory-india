@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waxlard-commits.github.io/ff-glory-india/sitemap.xml
