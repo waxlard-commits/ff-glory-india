@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FF Glory India - Admin Panel</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0b1220;
+color:#fff;
+padding:20px;
+padding-bottom:90px;
+}
+
+.card{
+background:#1b2435;
+border-radius:18px;
+padding:18px;
+margin-bottom:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+h1,h2{
+color:#ff9800;
+margin-bottom:15px;
+}
+
+.box{
+background:#273244;
+padding:15px;
+border-radius:12px;
+margin-top:12px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#111827;
+color:white;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+border-radius:10px;
+background:#ff9800;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.stat{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>👨‍💼 FF Glory Admin Panel</h1>
+
+<p>Manage users, payments and cards.</p>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Dashboard</h2>
+
+<div class="stat">
+
+<div class="box">
+👥 Users
+<h3 id="totalUsers">0</h3>
+</div>
+
+<div class="box">
+📦 Orders
+<h3 id="totalOrders">0</h3>
+</div>
+
+<div class="box">
+💎 Basic Cards
+<h3 id="basicCards">0</h3>
+</div>
+
+<div class="box">
+👑 Premium Cards
+<h3 id="premiumCards">0</h3>
+</div>
+
+</div>
+
+</div>
+<div class="card">
+
+<h2>👤 User Management</h2>
+
+<input
+type="text"
+id="userEmail"
+placeholder="Enter User Email">
+
+<input
+type="number"
+id="basicInput"
+placeholder="Basic Card">
+
+<input
+type="number"
+id="premiumInput"
+placeholder="Premium Card">
+
+<input
+type="number"
+id="ordersInput"
+placeholder="Orders">
+
+<button onclick="updateUser()">
+💾 Update User
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📸 Payment Approval</h2>
+
+<div class="box">
+
+<b>User:</b> demo@example.com
+
+<br><br>
+
+<b>Status:</b>
+
+<span style="color:orange;">
+Waiting for Approval
+</span>
+
+</div>
+
+<button onclick="approvePayment()">
+✅ Approve Payment
+</button>
+
+<button
+style="background:#e53935;"
+onclick="rejectPayment()">
+❌ Reject Payment
+</button>
+
+</div>
+<div class="card">
+
+<h2>⚙️ Admin Actions</h2>
+
+<button onclick="location.href='dashboard.html'">
+🏠 User Dashboard
+</button>
+
+<button onclick="adminLogout()">
+🚪 Logout
+</button>
+
+</div>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+window.updateUser = function(){
+
+const email = document.getElementById("userEmail").value;
+const basic = document.getElementById("basicInput").value;
+const premium = document.getElementById("premiumInput").value;
+const orders = document.getElementById("ordersInput").value;
+
+if(!email){
+alert("Please enter user email.");
+return;
+}
+
+alert(
+"User Updated\n\n" +
+"Email: " + email +
+"\nBasic: " + basic +
+"\nPremium: " + premium +
+"\nOrders: " + orders
+);
+
+/* Firebase Firestore update yahan next version me add karenge */
+
+};
+
+window.approvePayment = function(){
+
+alert("✅ Payment Approved");
+
+};
+
+window.rejectPayment = function(){
+
+alert("❌ Payment Rejected");
+
+};
+
+window.adminLogout = async function(){
+
+await signOut(auth);
+
+window.location.href = "index.html";
+
+};
+
+</script>
+
+</body>
+</html>

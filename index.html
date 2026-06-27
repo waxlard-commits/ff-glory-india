@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FF Glory India</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left-panel">
+
+<img src="logo.png" class="logo" alt="Logo">
+
+<h1>FF Glory India</h1>
+
+<p>Professional Gaming Panel</p>
+
+</div>
+
+<div class="right-panel">
+
+<div class="tabs">
+
+<button id="loginTab">Login</button>
+
+<button id="signupTab">Signup</button>
+
+</div>
+
+<div id="loginBox">
+
+<h2>Login</h2>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Enter Email">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter Password">
+
+<button onclick="login()">
+Login
+</button>
+
+<p>
+Don't have an account?
+<a href="#" id="showSignup">Signup</a>
+</p>
+
+</div>
+
+<div id="signupBox" style="display:none;">
+  <h2>Create Account</h2>
+
+<input
+type="email"
+id="signupEmail"
+placeholder="Enter Email">
+
+<input
+type="password"
+id="signupPassword"
+placeholder="Create Password">
+
+<button onclick="signup()">
+Create Account
+</button>
+
+<p>
+Already have an account?
+<a href="#" id="showLogin">Login</a>
+</p>
+
+</div>
+
+</div>
+
+</div>
+<script type="module" src="firebase.js"></script>
+<script type="module" src="app.js"></script>
+
+<script>
+const loginBox = document.getElementById("loginBox");
+const signupBox = document.getElementById("signupBox");
+
+document.getElementById("showSignup").onclick = function(e){
+e.preventDefault();
+loginBox.style.display = "none";
+signupBox.style.display = "block";
+};
+
+document.getElementById("showLogin").onclick = function(e){
+e.preventDefault();
+signupBox.style.display = "none";
+loginBox.style.display = "block";
+};
+
+document.getElementById("loginTab").onclick = function(){
+loginBox.style.display = "block";
+signupBox.style.display = "none";
+};
+
+document.getElementById("signupTab").onclick = function(){
+loginBox.style.display = "none";
+signupBox.style.display = "block";
+};
+</script>
+
+</body>
+</html>

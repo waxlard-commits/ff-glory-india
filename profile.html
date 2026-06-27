@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile - FF Glory India</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="card">
+
+<h1>👤 My Profile</h1>
+
+</div>
+
+<div class="card">
+
+<h2>Player Information</h2>
+
+<p><b>Email:</b> <span id="userEmail"></span></p>
+
+<p><b>Server:</b> <span id="userServer"></span></p>
+
+<p><b>Guild UID:</b> <span id="userGuild"></span></p>
+
+</div>
+
+<div class="card">
+
+<h2>Cards</h2>
+
+<div class="box">
+💎 Basic Card :
+<b id="basicCard">0</b>
+</div>
+
+<div class="box">
+👑 Premium Card :
+<b id="premiumCard">0</b>
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<button onclick="window.location.href='dashboard.html'">
+🏠<br>Home
+</button>
+
+<button onclick="window.location.href='profile.html'">
+👤<br>Profile
+</button>
+
+<button onclick="window.location.href='payment.html'">
+💳<br>Payment
+</button>
+
+<button onclick="window.location.href='history.html'">
+📜<br>History
+</button>
+
+<button onclick="logout()">
+🚪<br>Logout
+</button>
+
+</div>
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+document.getElementById("userEmail").innerText =
+localStorage.getItem("userEmail") || "Not Available";
+
+document.getElementById("userServer").innerText =
+localStorage.getItem("server") || "Not Selected";
+
+document.getElementById("userGuild").innerText =
+localStorage.getItem("guild") || "Not Entered";
+
+document.getElementById("basicCard").innerText =
+localStorage.getItem("basicCard") || "0";
+
+document.getElementById("premiumCard").innerText =
+localStorage.getItem("premiumCard") || "0";
+
+window.logout = async function(){
+
+await signOut(auth);
+
+localStorage.clear();
+
+window.location.href="index.html";
+
+};
+
+</script>
+
+</body>
+</html>

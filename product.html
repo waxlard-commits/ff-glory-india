@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products - FF Glory India</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+background:#0b1220;
+font-family:Poppins,sans-serif;
+color:white;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#111827;
+padding:20px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+color:#ff9800;
+}
+
+.products{
+padding:15px;
+}
+
+.product{
+background:#1f2937;
+border-radius:18px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.product h2{
+margin:0;
+color:#ff9800;
+}
+
+.product p{
+margin:10px 0;
+font-size:17px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:20px;
+}
+
+.price{
+font-size:38px;
+font-weight:bold;
+}
+
+.buy{
+padding:15px 25px;
+background:#ff9800;
+border:none;
+border-radius:12px;
+color:white;
+font-size:18px;
+font-weight:bold;
+}
+
+.buy:active{
+transform:scale(.97);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🛒 Glory Services
+</div>
+
+<div class="products">
+
+<div class="product">
+
+<h2>120k–150k Glory</h2>
+
+<p>⭐ 40,000 Glory</p>
+
+<div class="row">
+
+<div class="price">₹299</div>
+
+<button class="buy"
+onclick="buyNow('120k–150k Glory','299')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<h2>250k–320k Glory</h2>
+
+<p>⭐ 80,000 Glory</p>
+
+<div class="row">
+
+<div class="price">₹599</div>
+
+<button class="buy"
+onclick="buyNow('250k–320k Glory','599')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+<div class="product">
+
+<h2>350k–450k Glory</h2>
+
+<p>⭐ 120,000 Glory</p>
+
+<div class="row">
+
+<div class="price">₹899</div>
+
+<button class="buy"
+onclick="buyNow('350k–450k Glory','899')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<h2>500k–700k Glory</h2>
+
+<p>⭐ 200,000 Glory</p>
+
+<div class="row">
+
+<div class="price">₹1499</div>
+
+<button class="buy"
+onclick="buyNow('500k–700k Glory','1499')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<h2>800k–1M Glory</h2>
+
+<p>⭐ 300,000 Glory</p>
+
+<div class="row">
+
+<div class="price">₹2499</div>
+
+<button class="buy"
+onclick="buyNow('800k–1M Glory','2499')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+</div>
+
+<div class="bottom-nav">
+
+<button onclick="window.location.href='dashboard.html'">
+🏠<br>Home
+</button>
+
+<button onclick="window.location.href='products.html'">
+🛍<br>Products
+</button>
+
+<button onclick="window.location.href='payment.html'">
+💳<br>Payment
+</button>
+
+<button onclick="window.location.href='history.html'">
+📜<br>History
+</button>
+
+<button onclick="window.location.href='profile.html'">
+👤<br>Profile
+</button>
+
+</div>
+
+<script>
+
+function buyNow(product, price){
+
+    alert("Working");
+
+    localStorage.setItem("product", product);
+    localStorage.setItem("price", price);
+
+    window.location.href = "payment.html";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
