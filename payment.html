@@ -81,7 +81,17 @@ Submit Payment
 </div>
 
 <script type="module">
+function launchBot(){
 
+    const basicCard = 0; // Baad me Firebase se value lena
+
+    if(basicCard <= 0){
+        alert("You have not credit card.");
+        return;
+    }
+
+    window.location.href = "bot.html";
+}
 import { auth } from "./firebase.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
