@@ -394,3 +394,31 @@ function launchBot(){
 
     window.location.href = "bot.html";
 }
+
+.box{
+transition:.3s;
+}
+
+.box:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(255,152,0,.5);
+}
+
+.box h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.box p{
+color:#ddd;
+margin-bottom:10px;
+}
+
+button{
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.04);
+background:#ffb300;
+}
