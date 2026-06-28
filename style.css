@@ -511,3 +511,23 @@ font-weight:700;
     background-repeat:no-repeat;
     border-radius:20px;
 }
+
+.top-banner img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.welcome-box{
+    margin-top:15px;
+    background:#111827;
+    padding:18px;
+    border-radius:20px;
+}
+
+.welcome-box p{
+    color:#ff9800;
+    font-size:22px;
+    font-weight:700;
+}
