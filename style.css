@@ -341,3 +341,24 @@ background:#ff9800;
 font-size:18px;
 font-weight:bold;
 }
+  .input-box{
+    margin:20px 0;
+}
+
+.input-box label{
+    display:block;
+    color:#fff;
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2a3142;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+}
