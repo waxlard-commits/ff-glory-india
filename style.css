@@ -502,3 +502,12 @@ font-weight:700;
     font-size:22px;
     font-weight:bold;
 }
+.header-card{
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    border-radius:20px;
+}
