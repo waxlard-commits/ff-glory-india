@@ -146,3 +146,276 @@ p{
     text-align:center;
     margin-top:15px;
 }
+/* =========================
+   FF GLORY INDIA V2
+   PART 2
+========================= */
+
+.main{
+    padding:20px;
+    padding-bottom:90px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(17,24,39,.92);
+    padding:15px 20px;
+    border-radius:18px;
+    margin-bottom:20px;
+    border:1px solid rgba(255,152,0,.25);
+}
+
+.top-banner{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.top-banner img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:20px;
+    border:2px solid rgba(255,152,0,.4);
+}
+
+.welcome-box{
+    background:rgba(17,24,39,.92);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+    border:1px solid rgba(255,152,0,.25);
+}
+
+.welcome-box h2{
+    color:#ff9800;
+    margin-bottom:8px;
+}
+
+.welcome-box p{
+    color:#fff;
+    font-size:18px;
+}
+
+.qr{
+    width:230px;
+    max-width:100%;
+    display:block;
+    margin:20px auto;
+    border-radius:15px;
+    border:2px solid rgba(255,152,0,.3);
+}
+
+.warning-box{
+    margin-top:15px;
+    background:#3a1d1d;
+    color:#ffb3b3;
+    border:1px solid #ff4d4d;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    font-weight:600;
+}
+
+.price{
+    font-size:40px;
+    font-weight:700;
+    color:#ff9800;
+}
+/* =========================
+   FF GLORY INDIA V2
+   PART 3
+========================= */
+
+.card{
+    background:rgba(17,24,39,.92);
+    border:1px solid rgba(255,152,0,.20);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.30);
+}
+
+.card h1,
+.card h2,
+.card h3{
+    color:#ff9800;
+    margin-bottom:15px;
+}
+
+.box{
+    background:#222d42;
+    border-radius:14px;
+    padding:15px;
+    margin-top:12px;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 20px rgba(255,152,0,.25);
+}
+
+.premium-card{
+    background:linear-gradient(135deg,#162238,#0f172a);
+    border:1px solid rgba(255,152,0,.35);
+}
+
+.section-title{
+    color:#ff9800;
+    font-size:28px;
+    font-weight:700;
+    text-align:center;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.stat-card{
+    padding:20px;
+    border-radius:18px;
+    text-align:center;
+    color:#fff;
+}
+
+.basic{
+    background:linear-gradient(135deg,#ff9800,#ff6a00);
+}
+
+.orders{
+    background:linear-gradient(135deg,#6d28d9,#9333ea);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.stat-card h1{
+    color:#fff;
+    font-size:36px;
+}
+
+.stat-card h3{
+    color:#fff;
+    font-size:18px;
+}
+/* =========================
+   FF GLORY INDIA V2
+   PART 4
+========================= */
+
+/* Bottom Navigation */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:70px;
+    background:rgba(17,24,39,.98);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:2px solid #ff9800;
+    backdrop-filter:blur(10px);
+    z-index:999;
+}
+
+.bottom-nav button,
+.bottom-nav a{
+    flex:1;
+    background:none;
+    border:none;
+    color:#ffffff;
+    text-decoration:none;
+    text-align:center;
+    font-size:13px;
+    font-weight:600;
+    margin:0;
+    padding:10px 0;
+}
+
+.bottom-nav button:hover,
+.bottom-nav a:hover{
+    color:#ff9800;
+}
+
+.bottom-nav .active{
+    color:#ff9800;
+}
+
+/* Images */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .left-panel{
+        width:100%;
+        padding:30px 20px;
+    }
+
+    .right-panel{
+        width:100%;
+        padding:20px;
+    }
+
+    .logo{
+        width:90px;
+        height:90px;
+    }
+
+    .left-panel h1{
+        font-size:28px;
+    }
+
+    #loginBox,
+    #signupBox{
+        max-width:100%;
+        padding:20px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .top-banner img{
+        height:150px;
+    }
+
+    .main{
+        padding:15px;
+        padding-bottom:90px;
+    }
+}
+
+/* Desktop */
+
+@media (min-width:769px){
+
+    .main{
+        max-width:1000px;
+        margin:auto;
+    }
+
+    .bottom-nav{
+        max-width:1000px;
+        left:50%;
+        transform:translateX(-50%);
+        border-radius:20px 20px 0 0;
+    }
+}
