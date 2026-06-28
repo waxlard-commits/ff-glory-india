@@ -1,14 +1,13 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
-background:#0b1220;
-color:#ffffff;
-min-height:100vh;
+    background:
+    linear-gradient(rgba(8,12,22,.75), rgba(8,12,22,.9)),
+    url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    color:#fff;
+    min-height:100vh;
 }
 
 .container{
