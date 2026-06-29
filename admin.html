@@ -263,3 +263,36 @@ window.location.href = "index.html";
 
 </body>
 </html>
+
+async function loadUsers() {
+
+  const usersList = document.getElementById("usersList");
+  usersList.innerHTML = "Loading...";
+
+  const snapshot = await getDocs(collection(db, "users"));
+
+  let html = "";
+
+  snapshot.forEach((doc) => {
+
+    const user = doc.data();
+
+    html += `
+      <div class="box">
+        <b>${user.email}</b><br>
+        Basic Card: ${user.basicCard || 0}<br>
+        Orders: ${user.orders || 0}
+      </div>
+    `;
+
+  });
+
+  if (html === "") {
+    html = "No users found.";
+  }
+
+  usersList.innerHTML = html;
+
+}
+
+loadUsers();
