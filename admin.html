@@ -203,7 +203,16 @@ onclick="rejectPayment()">
 
 <script type="module">
 
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
+
+import {
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 window.updateUser = function(){
