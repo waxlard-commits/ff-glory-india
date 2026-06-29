@@ -321,9 +321,6 @@ No payment submitted yet.
 import { auth } from "./firebase.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-document.getElementById("welcomeUser").innerText =
-"Welcome " + (localStorage.getItem("userEmail") || "Player");
-
 document.getElementById("userEmail").innerText =
 localStorage.getItem("userEmail") || "Not Available";
 
@@ -336,8 +333,6 @@ localStorage.getItem("guild") || "Not Added";
 document.getElementById("basicCard").innerText =
 localStorage.getItem("basicCard") || "0";
 
-document.getElementById("premiumCard").innerText =
-localStorage.getItem("premiumCard") || "0";
 
 document.getElementById("orders").innerText =
 localStorage.getItem("orders") || "0";
