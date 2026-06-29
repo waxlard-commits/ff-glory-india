@@ -49,12 +49,6 @@ window.signup = async function () {
 
     alert("✅ Account created successfully!");
 
-    if (email === "admin@guildglory.com") {
-    window.location.href = "admin.html";
-} else {
-    window.location.href = "dashboard.html";
-    }
-
   } catch (error) {
 
     console.error(error);
@@ -177,3 +171,11 @@ onAuthStateChanged(auth, (user) => {
   }
 
 });
+
+alert("✅ Login Successful!");
+
+if (email === "admin@guildglory.com") {
+    window.location.href = "admin.html";
+} else {
+    window.location.href = "dashboard.html";
+}
