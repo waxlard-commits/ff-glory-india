@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guild Glory X</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<img src="assets/logo.png" width="120">
+<br><br>
+<img src="assets/banner.png" width="300">
+<div class="bg-animation"></div>
+
+<div class="login-container">
+
+<div class="login-card">
+
+<div class="logo-area">
+
+<img src="assets/logo.png" class="logo" alt="Guild Glory">
+
+<h1>GUILD GLORY</h1>
+
+<p>Professional Gaming Panel</p>
+
+</div>
+
+<div class="tabs">
+
+<button id="loginTab" class="active">
+LOGIN
+</button>
+
+<button id="signupTab">
+SIGN UP
+</button>
+
+</div>
+
+<!-- LOGIN -->
+
+<div id="loginPage">
+
+<div class="input-box">
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Enter Email">
+
+</div>
+
+<div class="input-box">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter Password">
+
+</div>
+
+<button id="loginBtn" class="main-btn">
+LOGIN NOW
+</button>
+
+<p class="switch-text">
+
+Don't have an account?
+
+<a href="#" id="goSignup">
+Create Account
+</a>
+
+</p>
+
+</div>
+
+<!-- SIGNUP -->
+
+<div id="signupPage" style="display:none;">
+
+<div class="input-box">
+
+<input
+type="email"
+id="signupEmail"
+placeholder="Enter Email">
+
+</div>
+
+<div class="input-box">
+
+<input
+type="password"
+id="signupPassword"
+placeholder="Create Password">
+
+</div>
+
+<div class="input-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password">
+
+</div>
+
+<button id="signupBtn" class="main-btn">
+
+CREATE ACCOUNT
+
+</button>
+
+<p class="switch-text">
+
+Already have an account?
+
+<a href="#" id="goLogin">
+
+Login
+
+</a>
+
+</p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+// Pages
+const loginPage = document.getElementById("loginPage");
+const signupPage = document.getElementById("signupPage");
+
+// Tabs
+const loginTab = document.getElementById("loginTab");
+const signupTab = document.getElementById("signupTab");
+
+// Links
+const goSignup = document.getElementById("goSignup");
+const goLogin = document.getElementById("goLogin");
+
+// Show Login
+function showLogin(){
+
+    loginPage.style.display = "block";
+    signupPage.style.display = "none";
+
+    loginTab.classList.add("active");
+    signupTab.classList.remove("active");
+
+}
+
+// Show Signup
+function showSignup(){
+
+    loginPage.style.display = "none";
+    signupPage.style.display = "block";
+
+    signupTab.classList.add("active");
+    loginTab.classList.remove("active");
+
+}
+
+// Events
+loginTab.onclick = showLogin;
+signupTab.onclick = showSignup;
+
+goSignup.onclick = (e)=>{
+    e.preventDefault();
+    showSignup();
+};
+
+goLogin.onclick = (e)=>{
+    e.preventDefault();
+    showLogin();
+};
+
+// Login
+document.getElementById("loginBtn").onclick = ()=>{
+
+    login();
+
+};
+
+// Signup
+document.getElementById("signupBtn").onclick = ()=>{
+
+    const pass = document.getElementById("signupPassword").value;
+    const confirm = document.getElementById("confirmPassword").value;
+
+    if(pass !== confirm){
+
+        alert("Password doesn't match");
+        return;
+
+    }
+
+    signup();
+
+};
+
+</script>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
