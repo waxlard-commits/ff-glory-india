@@ -1,0 +1,320 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0b1220;
+color:#fff;
+}
+
+.container{
+width:100%;
+max-width:500px;
+margin:auto;
+padding:15px;
+}
+
+.top-banner{
+background:linear-gradient(135deg,#ff9800,#ff5722);
+border-radius:18px;
+padding:20px;
+display:flex;
+align-items:center;
+box-shadow:0 0 25px rgba(255,152,0,.4);
+margin-bottom:20px;
+}
+
+.logo{
+width:70px;
+height:70px;
+border-radius:50%;
+background:#fff;
+padding:5px;
+}
+
+.banner-center{
+margin-left:15px;
+}
+
+.banner-center h1{
+font-size:24px;
+font-weight:700;
+}
+
+.banner-center p{
+font-size:14px;
+opacity:.9;
+}
+
+.banner-center h3{
+margin-top:5px;
+font-size:16px;
+}
+
+.card-box{
+background:#161d2d;
+padding:18px;
+border-radius:16px;
+margin-bottom:20px;
+}
+
+.card-box h2{
+margin-bottom:15px;
+font-size:18px;
+}
+
+.cards{
+display:flex;
+gap:15px;
+}
+
+.card{
+flex:1;
+padding:18px;
+border-radius:15px;
+text-align:center;
+}
+
+.basic{
+background:#ff9800;
+}
+
+.orders{
+background:#2196f3;
+}
+
+.card h1{
+margin-top:10px;
+font-size:30px;
+}
+.player-box,
+.service-box,
+.payment-box,
+.history-box,
+.saved-box{
+background:#161d2d;
+padding:18px;
+border-radius:16px;
+margin-bottom:20px;
+}
+
+.player-box h2,
+.service-box h2,
+.payment-box h2,
+.history-box h2,
+.saved-box h2{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+margin:10px 0 5px;
+}
+
+select,
+input{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#222c3d;
+color:#fff;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#ff9800;
+color:#fff;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff6f00;
+}
+
+.warning{
+margin-top:10px;
+color:#ff5252;
+text-align:center;
+font-size:14px;
+}
+
+.service-card{
+padding:18px;
+border-radius:16px;
+margin-bottom:15px;
+text-align:center;
+}
+
+.purple{
+background:#7b1fa2;
+}
+
+.blue{
+background:#1565c0;
+}
+
+.green{
+background:#2e7d32;
+}
+
+.gold{
+background:#ff9800;
+}
+.qr{
+width:220px;
+display:block;
+margin:15px auto;
+border-radius:15px;
+background:#fff;
+padding:8px;
+}
+
+.info,
+.info-card{
+background:#222c3d;
+padding:14px;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.history-card{
+background:#222c3d;
+padding:18px;
+border-radius:12px;
+text-align:center;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#161d2d;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+box-shadow:0 -5px 20px rgba(0,0,0,.4);
+}
+
+.bottom-nav a{
+text-decoration:none;
+color:#fff;
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:13px;
+}
+
+.bottom-nav a.active{
+color:#ff9800;
+}
+
+.bottom-nav span{
+margin-top:5px;
+}
+
+@media(max-width:500px){
+.container{
+padding:10px;
+}
+
+.banner-center h1{
+font-size:20px;
+}
+
+.card h1{
+font-size:24px;
+}
+}
+/* ===== Premium Effects ===== */
+
+.top-banner,
+.card-box,
+.player-box,
+.service-box,
+.payment-box,
+.history-box,
+.saved-box{
+    border:1px solid rgba(255,152,0,.25);
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+    transition:.3s ease;
+}
+
+.top-banner:hover,
+.card-box:hover,
+.player-box:hover,
+.service-box:hover,
+.payment-box:hover,
+.history-box:hover,
+.saved-box:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(255,152,0,.35);
+}
+
+.service-card{
+    transition:.3s;
+    cursor:pointer;
+}
+
+.service-card:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+button{
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.02);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border:2px solid #ff9800;
+    box-shadow:0 0 15px rgba(255,152,0,.4);
+}
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff9800;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+body{
+    padding-bottom:90px;
+}
+
+h1,h2,h3{
+    font-weight:700;
+}
+
+p{
+    color:#d6d6d6;
+}
+
+.logo{
+    object-fit:cover;
+}
