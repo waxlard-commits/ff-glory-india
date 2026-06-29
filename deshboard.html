@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Glory India Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Top Banner -->
+<div class="top-banner">
+
+<div class="banner-left">
+<img src="logo.png" class="logo">
+</div>
+
+<div class="banner-center">
+<h1>🎮 FF Glory India</h1>
+<p>Welcome</p>
+<h3 id="userEmail">Loading...</h3>
+</div>
+
+</div>
+
+<!-- Card Details -->
+<div class="card-box">
+
+<h2>💎 CARD DETAILS</h2>
+
+<div class="cards">
+
+<div class="card basic">
+<h3>💳 Basic Card</h3>
+<h1 id="basicCard">0</h1>
+</div>
+
+<div class="card orders">
+<h3>📋 Orders</h3>
+<h1 id="orders">0</h1>
+</div>
+
+</div>
+
+</div>
+
+<!-- Player Information -->
+
+<div class="player-box">
+
+<h2>🎮 Player Information</h2>
+
+<label>Server</label>
+
+<select id="server">
+
+<option>India</option>
+<option>Bangladesh</option>
+<option>Singapore</option>
+<option>Brazil</option>
+
+</select>
+
+<label>Guild UID</label>
+
+<input
+type="text"
+id="guildUID"
+placeholder="Enter Guild UID">
+
+<button id="launchBot">
+🚀 Launch Bot
+</button>
+
+<div class="warning">
+⚠ You have not credit card
+</div>
+
+</div>
+<!-- Glory Services -->
+
+<div class="service-box">
+
+<h2>🔥 Glory Services</h2>
+
+<div class="service-card purple">
+<h3>💎 200K Glory</h3>
+<p>🎫 1 Credit</p>
+<h1>₹199</h1>
+<button onclick="selectProduct('200K Glory','199')">
+🛒 Buy Now
+</button>
+</div>
+
+<div class="service-card blue">
+<h3>💠 400K Glory</h3>
+<p>🎫 2 Credits</p>
+<h1>₹399</h1>
+<button onclick="selectProduct('400K Glory','399')">
+🛒 Buy Now
+</button>
+</div>
+
+<div class="service-card green">
+<h3>⚡ 10 Lakh Glory</h3>
+<p>🎫 3 Credits</p>
+<h1>₹599</h1>
+<button onclick="selectProduct('10 Lakh Glory','599')">
+🛒 Buy Now
+</button>
+</div>
+
+<div class="service-card gold">
+<h3>👑 MAX LEVEL GUILD</h3>
+<p>🏆 Max Glory</p>
+<h1>₹1499</h1>
+<button onclick="selectProduct('MAX LEVEL','1499')">
+🚀 Buy Now
+</button>
+</div>
+
+</div>
+<!-- Selected Product -->
+
+<div class="payment-box">
+
+<h2>🛍 Selected Product</h2>
+
+<div class="info">
+<b>Product:</b>
+<span id="productName">
+No Product Selected
+</span>
+</div>
+
+<div class="info">
+<b>Price:</b>
+₹ <span id="productPrice">0</span>
+</div>
+
+<div class="info">
+<b>Status:</b>
+<span style="color:orange;">
+Waiting For Payment
+</span>
+</div>
+
+<h2>💳 Payment QR</h2>
+
+<img src="qr.jpg" class="qr">
+
+<p>
+Scan QR and complete payment.
+</p>
+
+<h2>📸 Upload Payment Screenshot</h2>
+
+<input
+type="file"
+id="paymentImage">
+
+<button id="submitPayment">
+Submit Payment
+</button>
+
+</div>
+<!-- Payment History -->
+
+<div class="history-box">
+
+<h2>📜 Payment History</h2>
+
+<div class="history-card">
+No payment submitted yet.
+</div>
+
+</div>
+
+<!-- Saved Information -->
+
+<div class="saved-box">
+
+<h2>👤 Saved Information</h2>
+
+<div class="info-card">
+<b>Email:</b>
+<span id="savedEmail">-</span>
+</div>
+
+<div class="info-card">
+<b>Server:</b>
+<span id="savedServer">-</span>
+</div>
+
+<div class="info-card">
+<b>Guild UID:</b>
+<span id="savedUID">-</span>
+</div>
+
+</div>
+<!-- Bottom Navigation -->
+
+<div class="bottom-nav">
+
+<a href="dashboard.html" class="active">
+🏠
+<span>Home</span>
+</a>
+
+<a href="profile.html">
+👤
+<span>Profile</span>
+</a>
+
+<a href="history.html">
+📜
+<span>History</span>
+</a>
+
+<a href="#" onclick="logoutUser()">
+🚪
+<span>Logout</span>
+</a>
+
+</div>
+
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
