@@ -649,75 +649,7 @@ width:96%;
 }
 
 }
-.left-panel{
-    width:40%;
-    background:#111827;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-}
-
-.banner{
-    width:100%;
-    max-width:420px;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-
-.logo{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:4px solid #ff9800;
-    background:#fff;
-    margin-bottom:20px;
-    object-fit:cover;
-}
-
-.left-panel h1{
-    color:#fff;
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-.left-panel p{
-    color:#ccc;
-    font-size:18px;
-}
-.banner{
-    width:100%;
-    max-width:420px;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:20px;
-}
-
-.logo{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:4px solid #ff9800;
-    object-fit:cover;
-    margin-bottom:20px;
-}
-
-.container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
-
-.left-panel{
-    display:none;
-}
+.
 
 .right-panel{
     width:100%;
