@@ -709,3 +709,17 @@ button{
     font-size:22px;
     font-weight:700;
 }
+
+.logo{
+    width: 140px !important;
+    height: auto !important;
+    max-width: 140px !important;
+    display: block;
+    margin: 20px auto;
+}
+
+.banner{
+    max-height: 220px !important;
+    width: 100% !important;
+    object-fit: cover;
+}
